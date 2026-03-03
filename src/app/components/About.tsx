@@ -106,7 +106,7 @@ export function About() {
                         />
                       </div>
                     )}
-                    <p style={{ fontFamily: FONT_SANS, fontWeight: 600, fontSize: '0.9rem', color: '#fafaf8', margin: 0 }}>
+                    <p style={{ fontFamily: FONT_SANS, fontWeight: 600, fontSize: '0.12rem', color: '#fafaf8', margin: 0 }}>
                       {role} <span style={{ color: 'rgba(255,255,255,0.48)', fontWeight: 400 }}>@ {company}</span>
                     </p>
                   </div>
