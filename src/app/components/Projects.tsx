@@ -133,7 +133,7 @@ export function Projects() {
         <motion.h2 initial={{ y: '100%' }} whileInView={{ y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
           style={{ fontFamily: FONT_SERIF, fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.04em', color: '#fafaf8', margin: 0 }}>
-          Things I\'ve built & shipped.
+          Things I've built & shipped.
         </motion.h2>
       </div>
 
