@@ -10,10 +10,10 @@ const FONT_MONO = '"DM Mono", monospace';
 const FONT_SANS = '"DM Sans", sans-serif';
 
 const timeline = [
-  { year: '2024–Present', role: 'AI Engineer',       company: 'Coforge',                   detail: 'HSBC real-time conversational analytics — $1.3M saved', logo: coforgeLogoImg, logoH: 25 },
-  { year: '2023–2024',    role: 'Data Scientist',     company: 'Gida Technologies',          detail: '163+ language RAG systems, sub-50ms recommenders',     logo: gidaLogoImg,    logoH: 20 },
-  { year: '2025–2027',    role: 'Executive Diploma',  company: 'IIIT Bangalore',             detail: 'MLOps & Generative AI',                                logo: iiitbLogoImg,   logoH: 14 },
-  { year: '2019–2023',    role: 'B.E. Mechanical',    company: 'BMS College of Engineering', detail: 'Best Outgoing Project · Published @ NCISCT 2022',       logo: bmsceLogoImg,   logoH: 22 },
+  { year: '2024–Present', role: 'AI Engineer',       company: 'Coforge',                   detail: 'HSBC real-time conversational analytics — $1.3M saved', logo: coforgeLogoImg, logoH: 40 },
+  { year: '2023–2024',    role: 'Data Scientist',     company: 'Gida Technologies',          detail: '163+ language RAG systems, sub-50ms recommenders',     logo: gidaLogoImg,    logoH: 40 },
+  { year: '2025–2027',    role: 'Executive Diploma',  company: 'IIIT Bangalore',             detail: 'MLOps & Generative AI',                                logo: iiitbLogoImg,   logoH: 40 },
+  { year: '2019–2023',    role: 'B.E. Mechanical',    company: 'BMS College of Engineering', detail: 'Best Outgoing Project · Published @ NCISCT 2022',       logo: bmsceLogoImg,   logoH: 40 },
 ];
 
 const pillars = [
