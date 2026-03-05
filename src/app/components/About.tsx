@@ -10,10 +10,21 @@ const FONT_MONO = '"DM Mono", monospace';
 const FONT_SANS = '"DM Sans", sans-serif';
 
 const timeline = [
-  { year: '2024–Present', role: 'AI Engineer',       company: 'Coforge',                   detail: 'HSBC real-time conversational analytics — $1.3M saved', logo: coforgeLogoImg, logoH: 55 },
-  { year: '2023–2024',    role: 'Data Scientist',     company: 'Gida Technologies',          detail: '163+ language RAG systems, sub-50ms recommenders',     logo: gidaLogoImg,    logoH: 55 },
-  { year: '2025–2027',    role: 'Executive Diploma',  company: 'IIIT Bangalore',             detail: 'MLOps & Generative AI',                                logo: iiitbLogoImg,   logoH: 55 },
-  { year: '2019–2023',    role: 'B.E. Mechanical',    company: 'BMS College of Engineering', detail: 'Best Outgoing Project · Published @ NCISCT 2022',       logo: bmsceLogoImg,   logoH: 55 },
+  {
+    year: '2024–Present',
+    role: 'AI Engineer',
+    company: 'Coforge',
+    detail: 'HSBC real-time conversational analytics — $1.3M saved',
+    logo: coforgeLogoImg,
+    logoH: 55,
+    awards: [
+      'Best Team Award — HSBC Account',
+      'Pat on the Back — Think Customer Award (Individual Excellence)',
+    ],
+  },
+  { year: '2023–2024', role: 'Data Scientist',    company: 'Gida Technologies',          detail: '163+ language RAG systems, sub-50ms recommenders',   logo: gidaLogoImg,  logoH: 55 },
+  { year: '2025–2027', role: 'Executive Diploma', company: 'IIIT Bangalore',             detail: 'MLOps & Generative AI',                              logo: iiitbLogoImg, logoH: 55 },
+  { year: '2019–2023', role: 'B.E. Mechanical',   company: 'BMS College of Engineering', detail: 'Best Outgoing Project · Published @ NCISCT 2022',     logo: bmsceLogoImg, logoH: 55 },
 ];
 
 const pillars = [
@@ -33,7 +44,7 @@ export function About() {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6vw', alignItems: 'start' }}>
 
-        {/* LEFT — statement from doc */}
+        {/* LEFT */}
         <div>
           <div style={{ overflow: 'hidden', marginBottom: '2.5rem' }}>
             <motion.h2 initial={{ y: '100%' }} whileInView={{ y: 0 }} viewport={{ once: true }}
@@ -58,7 +69,6 @@ export function About() {
             I treat AI as infrastructure — not as a prompt wrapper. That means designing for latency budgets, observability, provenance, reproducibility, and architectural clarity.
           </motion.p>
 
-          {/* 3D tilt focus pillars */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
             {pillars.map(({ title, desc }, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 * i }}>
@@ -78,51 +88,52 @@ export function About() {
         <div>
           <p style={{ fontFamily: FONT_MONO, fontSize: '0.62rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '1.8rem' }}>Experience & Education</p>
           <div>
-            {timeline.map(({ year, role, company, detail, logo, logoH }, i) => (
+            {timeline.map(({ year, role, company, detail, logo, awards }, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                 style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: '1.5rem', padding: '1.3rem 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                <span style={{ fontFamily: FONT_MONO, fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', paddingTop: '3px' }}>{year}</span>
+                <span style={{ fontFamily: FONT_MONO, fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', paddingTop: '3px' }}>{year}</span>
                 <div>
-                  {/* Company row with logo */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
                     {logo && (
                       <div style={{
-                        width: '32px',
-                        height: '32px',
-                        borderRadius: '5px',
-                        background: 'rgba(255,255,255,0.93)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0,
-                        overflow: 'hidden',
-                        padding: '3px',
-                        boxShadow: '0 1px 4px rgba(0,0,0,0.3)',
+                        width: '52px', height: '52px', borderRadius: '8px',
+                        background: 'rgba(255,255,255,0.93)', display: 'flex',
+                        alignItems: 'center', justifyContent: 'center',
+                        flexShrink: 0, overflow: 'hidden', padding: '5px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
                       }}>
-                        <img
-                          src={logo}
-                          alt={company}
-                          style={{ height: `${logoH}px`, width: 'auto', objectFit: 'contain', display: 'block' }}
-                        />
+                        <img src={logo} alt={company} style={{ height: '42px', width: '42px', objectFit: 'contain', display: 'block' }} />
                       </div>
                     )}
-                    <p style={{ fontFamily: FONT_SANS, fontWeight: 600, fontSize: '0.12rem', color: '#fafaf8', margin: 0 }}>
+                    <p style={{ fontFamily: FONT_SANS, fontWeight: 600, fontSize: '0.9rem', color: '#fafaf8', margin: 0 }}>
                       {role} <span style={{ color: 'rgba(255,255,255,0.48)', fontWeight: 400 }}>@ {company}</span>
                     </p>
                   </div>
-                  <p style={{ fontFamily: FONT_SANS, fontSize: '0.82rem', color: 'rgba(255,255,255,0.48)', lineHeight: 1.5, paddingLeft: logo ? '42px' : '0' }}>{detail}</p>
+                  <p style={{ fontFamily: FONT_SANS, fontSize: '0.82rem', color: 'rgba(255,255,255,0.48)', lineHeight: 1.5, paddingLeft: logo ? '62px' : '0', marginBottom: awards ? '0.6rem' : 0 }}>{detail}</p>
+
+                  {/* Awards */}
+                  {awards && (
+                    <div style={{ paddingLeft: logo ? '62px' : '0', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      {awards.map((award, j) => (
+                        <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ fontSize: '0.75rem' }}>🏆</span>
+                          <span style={{ fontFamily: FONT_SANS, fontSize: '0.78rem', color: '#c9a84c', lineHeight: 1.4 }}>{award}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <motion.a href="https://link.springer.com/chapter/10.1007/978-981-19-7663-6_52" target="_blank" rel="noopener noreferrer"
+          <motion.a href="https://ijiset.com/conference/NCISCT-2022/IJISET-NCISCT-220520.pdf" target="_blank" rel="noopener noreferrer"
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }}
             whileHover={{ x: 4 }}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '1.8rem', fontFamily: FONT_MONO, fontSize: '0.95rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.42)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#e8e0d0'}
             onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.42)'}>
-            ↗ NCISCT 2022 — Generating MCQs using Graphs & Language Models
+            ↗️ NCISCT 2022 — Generating MCQs using Graphs & Language Models
           </motion.a>
         </div>
       </div>
